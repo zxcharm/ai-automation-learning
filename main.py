@@ -1,7 +1,11 @@
 import json
 
-with open("requests.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+try:
+    with open("requests.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+except FileNotFoundError:
+    print("Файл requests.json не найден")
+    data = []
 
 urgent = []
 
@@ -15,5 +19,3 @@ with open("urgent.json", "w", encoding="utf-8") as f:
 
 print("Найдено срочных заявок: ", len(urgent))
 
-import os
-print(os.getcwd())
