@@ -5,7 +5,7 @@ try:
         data = json.load(f)
 except FileNotFoundError:
     print("Файл requests.json не найден")
-    data = []
+    exit()
 
 urgent = []
 
